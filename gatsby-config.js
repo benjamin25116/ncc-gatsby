@@ -1,11 +1,30 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `New Covenant Community Sentul`,
+    description: `A diverse and vibrant community of believers, loving and living like Jesus.`,
+    author: `@pitchun_`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-source-prismic-graphql",
+      options: {
+        repositoryName: "ncc-prismic", // (REQUIRED, replace with your own)
+        accessToken:
+          "MC5YdHhvOEJBQUFDTUFSRTU5.77-9F--_vRQgcwJVRe-_vUQ977-977-9FO-_ve-_ve-_ve-_vVFX77-9QWYa77-9Du-_ve-_vXzvv71D", // (optional API access token)
+        path: "/preview", // (optional preview path. Default: /preview)
+        previews: true, // (optional, activated Previews. Default: false)
+        pages: [
+          {
+            // (optional, builds pages dynamically)
+            type: "Post", // TypeName from prismic
+            match: "/messages/:uid", // Pages will be generated under this pattern
+            path: "/messages", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/post.js"),
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,17 +37,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `New Covenant Community`,
+        short_name: `NCC Sentul`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#EB6325`,
+        theme_color: `#FBAF34`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ncc-logo.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
