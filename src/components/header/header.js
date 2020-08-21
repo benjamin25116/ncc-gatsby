@@ -112,7 +112,7 @@ const Header = () => {
       closeButton.innerHTML = "&#215;"
       closeButton.style.fontSize = "1.85em"
       header.style.background = `linear-gradient(
-    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0.9) 20%,
     rgba(0, 0, 0, 0.35) 101%
   )`
       header.style.height = "100vh"
@@ -123,7 +123,7 @@ const Header = () => {
       closeButton.innerHTML = "&#9776;"
       closeButton.style.fontSize = "1.2em"
       header.style.background = `linear-gradient(
-    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 9) 20%,
     rgba(0, 0, 0, 0) 100%
   )`
       header.style.height = ""
