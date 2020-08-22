@@ -8,9 +8,13 @@ const StyledSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  max-height: 450px;
-  padding: 2.5rem;
+  padding: 6rem 2.5rem;
+`
+
+const StyledImage = styled.img`
+  width: 100vw;
+
+  // TODO: add media queries
 `
 
 const StyledTitle = styled.h2`
@@ -44,17 +48,25 @@ const SectionWithButton = ({
   buttonName,
   backgroundColor,
   buttonColor,
+  imgSrc,
+  altText,
 }) => {
-  const sectionBackground = {
-    background: `${backgroundColor}`,
-  }
   return (
-    <StyledSection style={sectionBackground}>
+    <StyledSection style={{ background: `${backgroundColor}` }}>
+      {title === "Founding Pastors" ? (
+        <StyledImage src={imgSrc} alt={altText} />
+      ) : (
+        <></>
+      )}
       <StyledTitle style={{ color: buttonColor }}>{title}</StyledTitle>
       <StyledBody>{children}</StyledBody>
-      <Button to={linkTo} color={buttonColor}>
-        {buttonName}
-      </Button>
+      {buttonName ? (
+        <Button to={linkTo} color={buttonColor}>
+          {buttonName}
+        </Button>
+      ) : (
+        <></>
+      )}
     </StyledSection>
   )
 }
