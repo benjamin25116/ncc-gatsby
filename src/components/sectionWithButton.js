@@ -8,13 +8,12 @@ const StyledSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 2.5rem;
+  padding: 4rem 2rem;
 `
 
 const StyledImage = styled.img`
+  max-width: 900px;
   width: 100vw;
-
-  // TODO: add media queries
 `
 
 const StyledTitle = styled.h2`
@@ -34,10 +33,19 @@ const StyledBody = styled.div`
   font-size: 1.2rem;
   line-height: 1.6rem;
 
+  @media ${device.mobileS} {
+    width: 270px;
+  }
+  @media ${device.mobileM} {
+    width: 300px;
+  }
+  @media ${device.mobileL} {
+    width: 360px;
+  }
   @media ${device.tablet} {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 2rem;
-    margin-bottom: 3.5rem;
+    width: 650px;
   }
 `
 
