@@ -1,9 +1,14 @@
 import React from "react"
-import Layout from "../components/layout/layout"
-import BannerImage from "../components/bannerImage"
 import SEO from "../components/layout/seo"
+import BannerImage from "../components/bannerImage"
+import Card from "../components/card"
+import CardsContainer from '../components/cardsContainer'
+import Layout from "../components/layout/layout"
 import SectionWithButton from "../components/sectionWithButton"
-import founders from "../images/pastor-petrina-photo.jpeg"
+import founders from "../images/loving-family-laughing-at-table-having-cozy-meal-3807571.jpg"
+import connectGroup from "../images/Huey-Lin-and-Rolitah-May-2020.jpg"
+import genY from "../images/genY.jpg"
+import sundaySchool from "../images/sundaySchool.jpg"
 
 const Home = () => {
   return (
@@ -64,18 +69,32 @@ const Home = () => {
       </SectionWithButton>
       <SectionWithButton
         title="Our Ministries"
-        linkTo="/ministries"
-        // buttonName="Read more"
+        titleColor="var(--brown)"
         backgroundColor="white"
         buttonColor="var(--brown)"
       >
-        <p>
+        <p style={{ paddingBottom: "1.8rem" }}>
           Apart from our weekly Sunday celebrations, dolores et omnis et
           reprehenderit modi qui maxime. Consectetur eaque dolorem officia
           eaque. Voluptatem omnis consequatur praesentium odit enim dolores
           distinctio quidem. Est dolorem quas qui et ipsam. Quis est sit quo
           molestias et dolor.
         </p>
+        <CardsContainer>
+          <Card
+            title="Connect Group"
+            imgSrc={connectGroup}
+            to="/"
+            color="var(--orange)"
+          />
+          <Card title="Gen.Y" imgSrc={genY} to="/" color="var(--yellow)" />
+          <Card
+            title="Sunday School"
+            imgSrc={sundaySchool}
+            to="/"
+            color="var(--green)"
+          />
+        </CardsContainer>
       </SectionWithButton>
     </Layout>
   )
