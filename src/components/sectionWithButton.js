@@ -27,7 +27,7 @@ const StyledTitle = styled.h2`
   }
 `
 
-const StyledBody = styled.p`
+const StyledBody = styled.div`
   text-align: center;
   margin-bottom: 2.5rem;
   max-width: 900px;
@@ -53,20 +53,14 @@ const SectionWithButton = ({
 }) => {
   return (
     <StyledSection style={{ background: `${backgroundColor}` }}>
-      {title === "Founding Pastors" ? (
-        <StyledImage src={imgSrc} alt={altText} />
-      ) : (
-        <></>
-      )}
+      {imgSrc ? <StyledImage src={imgSrc} alt={altText} /> : null}
       <StyledTitle style={{ color: buttonColor }}>{title}</StyledTitle>
       <StyledBody>{children}</StyledBody>
       {buttonName ? (
         <Button to={linkTo} color={buttonColor}>
           {buttonName}
         </Button>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </StyledSection>
   )
 }
