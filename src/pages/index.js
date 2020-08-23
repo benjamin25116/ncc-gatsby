@@ -2,12 +2,12 @@ import React from "react"
 import SEO from "../components/layout/seo"
 import BannerImage from "../components/bannerImage"
 import Card from "../components/card"
-import CardsContainer from '../components/cardsContainer'
+import CardsContainer from "../components/cardsContainer"
 import Layout from "../components/layout/layout"
 import SectionWithButton from "../components/sectionWithButton"
 import founders from "../images/loving-family-laughing-at-table-having-cozy-meal-3807571.jpg"
 import connectGroup from "../images/Huey-Lin-and-Rolitah-May-2020.jpg"
-import genY from "../images/genY.jpg"
+import genY from "../images/geny.jpg"
 import sundaySchool from "../images/sundaySchool.jpg"
 
 const Home = () => {
